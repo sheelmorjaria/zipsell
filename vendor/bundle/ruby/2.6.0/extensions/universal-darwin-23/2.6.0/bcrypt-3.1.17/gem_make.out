@@ -1,0 +1,25 @@
+current directory: /Users/sheelmorjaria/Documents/zipsell/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.17/ext/mri
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20240120-6341-g5t10z.rb extconf.rb
+creating Makefile
+
+current directory: /Users/sheelmorjaria/Documents/zipsell/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.17/ext/mri
+make "DESTDIR=" clean
+
+current directory: /Users/sheelmorjaria/Documents/zipsell/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.17/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt_blowfish.c
+xcrun clang  -D__SKIP_GNU -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -c -o x86.o x86.S
+compiling crypt_gensalt.c
+compiling wrapper.c
+wrapper.c:182:60: warning: declaration of 'struct crypt_data' will not be visible outside of this function [-Wvisibility]
+char *crypt_r(const char *key, const char *setting, struct crypt_data *data)
+                                                           ^
+1 warning generated.
+linking shared-object bcrypt_ext.bundle
+ld: warning: -multiply_defined is obsolete
+ld: warning: search path '/AppleInternal/Library/BuildRoots/4e1473ee-9f66-11ee-8daf-cedaeb4cabe2/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.3.Internal.sdk/usr/local/lib' not found
+
+current directory: /Users/sheelmorjaria/Documents/zipsell/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.17/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20240120-6341-1le0p0g

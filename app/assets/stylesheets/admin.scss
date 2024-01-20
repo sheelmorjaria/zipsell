@@ -1,0 +1,141 @@
+body.admin, body.shop {
+	nav, .items .item {
+		padding: 1em;
+		// .level {
+		// 	.level-left .level-item {
+		// 		// padding-right: 0.5em;
+		// 	}
+		// 	.level-right .level-item {
+		// 		padding-left: 0.5em;
+		// 	}
+		// }
+	}
+	.items.nested .item {
+
+	}
+	nav.header {
+		border-bottom: 1px solid #EEE;
+	}
+	.notifications {
+		padding: 1.5em 1.5em 0 1.5em;
+	}
+	.level-right .level-item {
+		margin-right: 0 !important;
+	}
+}
+
+body.admin {
+	nav ul li {
+		display: inline;
+		margin-left: 1em;
+		a {
+			&.current {
+				color: #000;
+			}
+		}
+	}
+	nav {
+		position: relative;
+	}
+	nav .dropdown {
+		position: absolute;
+		top: 0;
+		left: 1em;
+		height: 60%;
+		top: 20%;
+		button {
+			background-image: asset-data-url('hamburger.svg');
+			background-position: 0 50%;
+			background-size: 25px auto;
+			background-repeat: no-repeat;
+			position: absolute;
+			border: none !important;
+		}
+	}
+	nav a.hamburger {
+		display: none;
+		background-image: asset-data-url('hamburger.svg');
+		background-position: 0 50%;
+		background-size: 25px auto;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0;
+		left: 1em;
+		height: 100%;
+		width: 60px;
+	}
+	nav.pagination {
+		padding: 1em;
+	}
+	.items {
+		.item {
+			border-bottom: 1px solid #EEE;
+		}
+	}
+	.itemdetail, .pageheader {
+		padding: 1em;
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+		.metadata {
+			margin-top: -0.5em;
+			padding-bottom: 0.4em;
+		}
+	}
+	.pageheader {
+		border-bottom: 1px solid #EEE;
+	}
+	.productlinks {
+		border-top: 1px solid #EEE;
+	}
+	.actionbutton {
+		text-align: right;
+		padding: 1em;
+	}
+	.stats {
+		padding: 2em;
+		padding-bottom: 0;
+		.card {
+			padding: 2em;
+			text-align: center;
+		}
+	}
+	.form {
+		padding: 0 1em;
+		.actionbutton {
+			padding: 1em 0;
+		}
+		#hiddenupload {
+			display: none;
+		}
+	}
+	#error_explanation {
+		margin-bottom: 1em;
+		color: #CC0000;
+	}
+}
+
+@media only screen and (max-width : 768px) {
+	body.admin {
+		// nav, .items .item, nav.pagination, .actionbutton {
+		// 	padding: 1em;
+		// }
+		.pageheader {
+			padding-top: 1em;
+			padding-bottom: 1.5em;
+			.level-right {
+				margin-top: 0.5em;
+			}
+		}
+		.navigation {
+			display: none;
+		}
+		.pageheader {
+
+		}
+		.metadata {
+			text-align: center;
+		}
+	}
+}

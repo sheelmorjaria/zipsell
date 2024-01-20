@@ -1,0 +1,21 @@
+.itemdetail
+  h1 Change your password
+
+.form
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+    = devise_error_messages!
+    = f.hidden_field :reset_password_token
+    .field
+      = f.label :password, "New password", :class => "label"
+      .control
+        = f.password_field :password, autocomplete: "new-password", :class => "input"
+        - if @minimum_password_length
+          p.help #{@minimum_password_length} characters minimum
+
+    .field
+      = f.label :password_confirmation, "Confirm new password", :class => "label"
+      .control
+        = f.password_field :password_confirmation, autocomplete: "new-password", :class => "input"
+
+    .actionbutton
+      = f.submit "Change my password", :class => "button is-primary"

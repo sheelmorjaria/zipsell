@@ -1,0 +1,50 @@
+require: rubocop-rspec
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'bin/**/*'
+    - 'tmp/**/*'
+    - "vendor/**/*"
+Metrics/AbcSize:
+  Max: 40
+Metrics/LineLength:
+  Max: 125
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+Metrics/MethodLength:
+  Max: 20
+Metrics/CyclomaticComplexity:
+  Max: 10
+Metrics/PerceivedComplexity:
+  Max: 10
+Metrics/BlockLength:
+  Enabled: false
+Documentation:
+  Enabled: false
+Style/SignalException:
+  EnforcedStyle: only_raise
+Layout/IndentHash:
+  EnforcedStyle: consistent
+Layout/IndentArray:
+  EnforcedStyle: consistent
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+Lint/InheritException:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/NestedGroups:
+  Max: 4
+RSpec/ContextWording:
+  Prefixes:
+    - when
+    - with
+    - without
+    - for
+    - as
+RSpec/MultipleExpectations:
+  Max: 2

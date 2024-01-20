@@ -1,0 +1,5 @@
+p You requested a new download link.
+
+p You can download your file here:
+
+p #{link_url @payment.links.order(:created_at => "desc").first}

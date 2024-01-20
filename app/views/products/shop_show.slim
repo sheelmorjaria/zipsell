@@ -1,0 +1,4 @@
+= render :partial => "shop_product", :object => @product, :as => "product"
+.fulldetails 
+	.inner 
+		.markdown #{@markdown.render(@product.description).html_safe}

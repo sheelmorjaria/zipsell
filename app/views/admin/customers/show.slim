@@ -1,0 +1,7 @@
+.itemdetail
+	.level
+		.level-left
+			h1 #{@customer.email}
+
+.productlinks.items.nested
+	= render @customer.payments.order(:created_at => "asc")

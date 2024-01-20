@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    title #{ENV['shop_name']} Admin
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    meta name="description" content=""
+    meta property="og:title" content=""
+    meta property="og:description" content=""
+    //meta property="og:image" content="#{asset_url(facebookshare_image)}"
+
+  body class="admin #{controller_name} #{action_name}"
+    nav.header
+      .dropdown.is-hidden-tablet.is-hoverable
+        .dropdown-trigger
+          button.button[aria-haspopup="true" aria-controls="dropdown-menu"]
+        #dropdown-menu.dropdown-menu[role="menu"]
+          .dropdown-content
+            a.dropdown-item href="#{dashboard_path}" Dashboard
+            a.dropdown-item href="#{products_path}" Products
+            a.dropdown-item href="#{admin_customers_path}" Customers
+            a.dropdown-item href="#{payments_path}" Payments
+            hr.dropdown-divider
+            = link_to 'Log out', destroy_admin_session_path, method: :delete, :class => "dropdown-item"
+
+
+      .level
+        .level-left
+          .level-item
+            p.has-text-weight-bold #{ENV['shop_name']} Admin
+        - if current_admin
+          .level-right.navigation
+            .level-item
+              ul
+                li
+                  a href="#{dashboard_path}" class="#{'current' if action_name == "dashboard"}" Dashboard
+                li
+                  a href="#{products_path}" class="#{'current' if controller_name == "products" && action_name == "index"}" Products
+                li
+                  a href="#{admin_customers_path}" class="#{'current' if controller_name == "customers" && action_name == "index"}" Customers
+                li
+                  a href="#{payments_path}" class="#{'current' if controller_name == "payments" && action_name == "index"}" Payments
+                li
+                  = link_to 'Log out', destroy_admin_session_path, method: :delete
+
+
+    = render "layouts/notifications"
+    = yield
